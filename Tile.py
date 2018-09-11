@@ -1,6 +1,6 @@
 class Tile:
-    def __init__(self, isBomb):
-        self.isBomb = isBomb
+    def __init__(self):
+        self.isBomb = False
         self.isClicked = False
         self.isFlagged = False
         self.numberOfAdjacentBombs = 0
@@ -8,15 +8,17 @@ class Tile:
     def clickTile(self):
         if not self.isFlagged:
             self.isClicked = True
-        else:
-            #nop
+        #else: NOOP 
 
     def toggleFlag(self):
         self.isFlagged = True if not self.isFlagged else False
 
     def setNumberOfAdjacentBombs(self, numberOfAdjacentBombs):
         self.numberOfAdjacentBombs = numberOfAdjacentBombs
+    def incementNumberOfAdjacentBombsByOne(self):
+        self.numberOfAdjacentBombs = self.numberOfAdjacentBombs + 1
 
-    def toggleBomb(self):
-        self.isBomb = True if not self.isBomb else False
+    def setIsBomb(self, isBomb):
+        self.isBomb = isBomb 
+
 
