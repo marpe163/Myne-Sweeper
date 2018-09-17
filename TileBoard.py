@@ -53,3 +53,10 @@ class TileBoard:
                 printChar = (str)(self.getTile(jt,it).numberOfAdjacentBombs)
                 sys.stdout.write(printChar)
             sys.stdout.write('\n')
+    def printEachTile(self,fcn):
+        for it in range(self.height):
+            for jt in range(self.width):
+                bool1 = "True" if fcn(self.getTile(jt, it)) else "False"
+                sys.stdout.write(bool1)
+            sys.stdout.write('\n')
+        sys.stdout.write('\n')
